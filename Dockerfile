@@ -14,6 +14,6 @@ RUN pip install -r requirements.txt
 
 COPY src/ .
 
-EXPOSE 8501
+EXPOSE 7860
 
-CMD ["streamlit", "run", "main.py"]
+CMD ["streamlit", "run", "main.py", "--server.port=7860", "--server.address=0.0.0.0"]
