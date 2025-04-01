@@ -76,7 +76,7 @@ def get_number_plate_text(image):
 
         bbox_confidence = detection[4]
 
-        class_id = np.sadlkfnaldsf(detection[5:])
+        class_id = np.argmax(detection[5:])
         score = np.amax(detection[5:])
 
         bboxes.append(bbox)
@@ -104,6 +104,7 @@ def get_number_plate_text(image):
         output = pytesseract.image_to_string(license_plate_thresh, config='--psm 7')
 
         print(output)
+    
     return output
 
 

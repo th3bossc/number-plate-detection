@@ -1,5 +1,5 @@
 import streamlit as st
-from image_detection import extract_number_plate_text
+from image_detection import extract_number_plate_text, get_number_plate_text
 from PIL import Image
 
 st.title("License Plate Recognition App 🚗")
@@ -14,3 +14,7 @@ if uploaded_file:
     plate_text = extract_number_plate_text(image)
     st.subheader("Extracted Number Plate: ")
     st.write(plate_text)
+
+    text_plate = get_number_plate_text(image)
+    st.subheader("Extracted Number Plate using DNN: ")
+    st.write(text_plate)
